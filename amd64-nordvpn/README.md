@@ -1,3 +1,4 @@
+# Usage
 Run docker
 ```
 docker run -ti --cap-add=NET_ADMIN --device /dev/net/tuns
@@ -8,3 +9,5 @@ nordvpnd &
 nordvpn login
 nordvpn connect
 ```
+# Issues
+* IPv6 not disabled - TODO: Disable IPv6 through iptables
