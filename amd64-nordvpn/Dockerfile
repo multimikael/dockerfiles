@@ -4,7 +4,7 @@ FROM alpine:latest
 # Download and install NordVPN
 ARG VER=3.1.0-6
 #Maybe sha256sum the file
-RUN apk --update --no-cache add curl libarchive-tools net-tools libxslt iptables ip6tables procps iproute2 && \
+RUN apk --update --no-cache add curl libarchive-tools net-tools libxslt iptables procps iproute2 && \
     curl -O https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn_${VER}_amd64.deb && \
     bsdtar -O -xf nordvpn_${VER}_amd64.deb data.tar.xz | bsdtar -C / -xJf - && \
     rm nordvpn_${VER}_amd64.deb
