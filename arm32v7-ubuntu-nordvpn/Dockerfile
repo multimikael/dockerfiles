@@ -8,4 +8,6 @@ RUN apt-get update && apt-get install -y curl bsdtar libxslt1.1 iproute2 iptable
     bsdtar -O -xf nordvpn_${VER}_armhf.deb data.tar.xz | bsdtar -C / -xJf - && \
     rm nordvpn_${VER}_armhf.deb
 
-CMD [ "systemctl start nordvpnd" ]
+COPY nord.sh /usr/bin/
+
+ENTRYPOINT [ "/usr/bin/nord.sh" ]
