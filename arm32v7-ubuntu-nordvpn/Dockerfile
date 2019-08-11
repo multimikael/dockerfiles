@@ -7,7 +7,3 @@ RUN apt-get update && apt-get install -y curl bsdtar libxslt1.1 iproute2 iptable
     curl -O https://repo.nordvpn.com/deb/nordvpn/debian/pool/main/nordvpn_${VER}_armhf.deb && \
     bsdtar -O -xf nordvpn_${VER}_armhf.deb data.tar.xz | bsdtar -C / -xJf - && \
     rm nordvpn_${VER}_armhf.deb
-
-COPY nord.sh /usr/bin/
-
-ENTRYPOINT [ "/usr/bin/nord.sh" ]
